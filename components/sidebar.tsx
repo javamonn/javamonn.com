@@ -1,15 +1,42 @@
 import * as React from "react";
+import NextLink from "next/link";
+import { useRouter } from "next/router";
 
-const Link = ({ children }) => 
-  <a className="db f2 b underline i ttu">{children}</a>
+const Link = ({ children, href, relative = false, active = false }) => {
+  const className = active
+    ? "f2 b underline i ttu white bg-black pa2 pointer"
+    : "f2 b underline i ttu black pa2 pointer";
 
-const Sidebar = () => (
-  <div className="flex flex-column justify-end pl5 pr6 pb5 h-100">
-    <Link>Blog</Link>
-    <Link>Work</Link>
-    <Link>Github</Link>
-    <Link>Contact</Link>
-  </div>
-);
+  return (
+    <div className="mt2 pa2">
+      {relative ? (
+        <NextLink href={href}>
+          <a className={className}>{children}</a>
+        </NextLink>
+      ) : (
+        <a className={className} href={href}>
+          {children}
+        </a>
+      )}
+    </div>
+  );
+};
 
-export default Sidebar
+const Sidebar = () => {
+  const router = useRouter();
+
+  return (
+    <div className="flex flex-column justify-end pl5 pb5 h-100 z-1">
+      <Link href="/blog" relative={true} active={router.pathname === "/blog"}>
+        Blog
+      </Link>
+      <Link href="/work" relative={true} active={router.pathname === "/work"}>
+        Work
+      </Link>
+      <Link href="https://github.com/javamonn">Github</Link>
+      <Link href="mailto:javamonn@gmail.com">Contact</Link>
+    </div>
+  );
+};
+
+export default Sidebar;

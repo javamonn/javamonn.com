@@ -1,5 +1,7 @@
 import * as React from "react";
+
 import Sidebar from "../components/sidebar";
+import Content from "../components/content";
 
 const experienceItems = [
   {
@@ -46,8 +48,30 @@ const renderSection = ({ title, items, renderItem }) => (
 );
 
 const Resume = () => (
-  <div className="bg-white sans-serif vh-100 vw-100 relative">
+  <div className="bg-white sans-serif vh-100 vw-100 flex">
     <Sidebar />
+    <Content>
+      {renderSection({
+        title: "Experience",
+        items: experienceItems,
+        renderItem: ({ title, date, headline, bullets }) => (
+          <React.Fragment key={title}>
+            <p>
+              {title}
+              <br />
+              {date}
+            </p>
+            <p>{headline}</p>
+            <ul>
+              {bullets.map((t) => (
+                <li key={t}>{t}</li>
+              ))}
+            </ul>
+          </React.Fragment>
+        ),
+      })}
+    </Content>
+    <div />
   </div>
 );
 
