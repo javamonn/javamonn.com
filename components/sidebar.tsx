@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 
 const Link = ({ children, href, relative = false, active = false }) => {
   const className = active
-    ? "f2 b underline i ttu white bg-black pa2 pointer"
+    ? "f2 b i no-underline ttu white bg-black pa2 pointer"
     : "f2 b underline i ttu black pa2 pointer";
 
   return (

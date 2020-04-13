@@ -3,6 +3,21 @@ import * as React from "react";
 import Sidebar from "../components/sidebar";
 import Content from "../components/content";
 
+const projectItems = [
+  {
+    title: "trashed",
+    href: "https://trashed.today",
+    description:
+      "trashed is a free, decentralized, and efficient peer-to-peer recycling system - like the “free stuff” section on craigslist, but for things that have already been thrown out. Distributed as a Progressive Web Application, utilizes ReasonML, React, Tailwind CSS, GraphQL, and AWS Amplify.",
+  },
+  {
+    title: "Borges",
+    href: "https://github.com/literal-io",
+    description:
+      "Browser based PDF reader distributed as a WebExtension. Implements a reader interface with features like zoom and search, document library management, and document augmentation features like optical character recognition and annotations. Supports a number of paying users. Utilizes ReasonML, Node.js, CouchDB, and Kubernetes.",
+  },
+];
+
 const experienceItems = [
   {
     title: "Technical Lead, BigSpring",
@@ -41,7 +56,7 @@ const experienceItems = [
 
 const renderSection = ({ title, items, renderItem }) => (
   <>
-    <h1>{title}</h1>
+    <h3>{title}</h3>
     <hr />
     {items.map(renderItem)}
   </>
@@ -51,6 +66,20 @@ const Resume = () => (
   <div className="bg-white sans-serif vh-100 vw-100 flex">
     <Sidebar />
     <Content>
+      {renderSection({
+        title: "Projects",
+        items: projectItems,
+        renderItem: ({ title, href, description }) => (
+          <React.Fragment key={href}>
+            <p>
+              {title}
+              <br />
+              <a href={href}>{href}</a>
+            </p>
+            <p>{description}</p>
+          </React.Fragment>
+        ),
+      })}
       {renderSection({
         title: "Experience",
         items: experienceItems,
