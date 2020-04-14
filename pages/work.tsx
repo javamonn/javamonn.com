@@ -14,7 +14,7 @@ const projectItems = [
     title: "Borges",
     href: "https://github.com/literal-io",
     description:
-      "Browser based PDF reader distributed as a WebExtension. Implements a reader interface with features like zoom and search, document library management, and document augmentation features like optical character recognition and annotations. Supports a number of paying users. Utilizes ReasonML, Node.js, CouchDB, and Kubernetes.",
+      "Browser based PDF reader distributed as a WebExtension. Implements a reader interface with features like zoom and search, document library management, and document augmentation features like optical character recognition and annotations. Supports a number of paying users. Utilizes ReasonML, React, JavaScript, TypeScript, Node.js, Clojure, CouchDB, and Kubernetes.",
   },
 ];
 
@@ -54,51 +54,56 @@ const experienceItems = [
   },
 ];
 
-const renderSection = ({ title, items, renderItem }) => (
-  <>
-    <h3>{title}</h3>
+const Section = ({ className = "", title, items, renderItem }) => (
+  <div className={className}>
+    <h3 className="i f4">{title}</h3>
     <hr />
     {items.map(renderItem)}
-  </>
+  </div>
 );
 
 const Resume = () => (
   <div className="bg-white sans-serif vh-100 vw-100 flex">
     <Sidebar />
     <Content>
-      {renderSection({
-        title: "Projects",
-        items: projectItems,
-        renderItem: ({ title, href, description }) => (
+      <Section
+        title={"Projects"}
+        items={projectItems}
+        className="mb5 mt5"
+        renderItem={({ title, href, description }) => (
           <React.Fragment key={href}>
-            <p>
+            <p className="f4">
               {title}
               <br />
-              <a href={href}>{href}</a>
+              <a className="black" href={href}>
+                {href}
+              </a>
             </p>
-            <p>{description}</p>
+            <p className="f4">{description}</p>
           </React.Fragment>
-        ),
-      })}
-      {renderSection({
-        title: "Experience",
-        items: experienceItems,
-        renderItem: ({ title, date, headline, bullets }) => (
+        )}
+      />
+      <Section
+        title={"Experience"}
+        items={experienceItems}
+        renderItem={({ title, date, headline, bullets }) => (
           <React.Fragment key={title}>
-            <p>
+            <p className="f4">
               {title}
               <br />
               {date}
             </p>
-            <p>{headline}</p>
+            <p className="f4">{headline}</p>
             <ul>
               {bullets.map((t) => (
-                <li key={t}>{t}</li>
+                <li className="f4" key={t}>
+                  {t}
+                </li>
               ))}
             </ul>
           </React.Fragment>
-        ),
-      })}
+        )}
+      />
     </Content>
     <div />
   </div>
