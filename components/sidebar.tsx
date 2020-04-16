@@ -27,8 +27,12 @@ const Sidebar = () => {
 
   return (
     <div className="flex flex-column justify-end pl5 pb5 h-100 z-1">
-      <Link href="/blog" relative={true} active={router.pathname === "/blog"}>
-        Blog
+      <Link
+        href="/writing"
+        relative={true}
+        active={router.pathname === "/writing"}
+      >
+        Writing
       </Link>
       <Link href="/work" relative={true} active={router.pathname === "/work"}>
         Work

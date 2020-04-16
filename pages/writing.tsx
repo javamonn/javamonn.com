@@ -25,7 +25,7 @@ const Blog = () => (
         title="Automatic Analytics"
         description="Analytics within early stage products, like the product itself, are necessarily iterative. What if you could scaffold event reporting from the core business logic?"
         date="April 14 2020"
-        href="blog/automatic-analytics"
+        href="writing/automatic-analytics"
       />
     </Content>
   </div>
