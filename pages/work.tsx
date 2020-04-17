@@ -69,7 +69,7 @@ const Resume = () => (
       <Section
         title={"Projects"}
         items={projectItems}
-        className="mb5 mt5"
+        className="mb5"
         renderItem={({ title, href, description }) => (
           <React.Fragment key={href}>
             <p className="f4">

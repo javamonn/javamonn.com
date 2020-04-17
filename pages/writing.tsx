@@ -20,7 +20,7 @@ const Post = ({ title, description, date, href }) => (
 const Blog = () => (
   <div className="bg-white sans-serif vh-100 vw-100 flex">
     <Sidebar />
-    <Content className="pv5">
+    <Content>
       <Post
         title="Automatic Analytics"
         description="Analytics within early stage products, like the product itself, are necessarily iterative. What if you could scaffold event reporting from the core business logic?"
