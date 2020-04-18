@@ -26,7 +26,7 @@ const Sidebar = () => {
   const router = useRouter();
 
   return (
-    <div className="flex flex-column justify-end pl5 pb5 h-100 z-1">
+    <nav className="flex flex-column justify-end pl5 pb5 h-100 z-1">
       <Link
         href="/writing"
         relative={true}
@@ -39,7 +39,7 @@ const Sidebar = () => {
       </Link>
       <Link href="https://github.com/javamonn">Github</Link>
       <Link href="mailto:javamonn@gmail.com">Contact</Link>
-    </div>
+    </nav>
   );
 };
 

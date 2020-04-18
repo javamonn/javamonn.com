@@ -56,8 +56,8 @@ const experienceItems = [
 
 const Section = ({ className = "", title, items, renderItem }) => (
   <div className={className}>
-    <h3 className="i f4">{title}</h3>
-    <hr />
+    <h3 className="i f4 lh-copy ma0 mb3">{title}</h3>
+    <hr className="b--black" />
     {items.map(renderItem)}
   </div>
 );
@@ -72,14 +72,14 @@ const Resume = () => (
         className="mb5"
         renderItem={({ title, href, description }) => (
           <React.Fragment key={href}>
-            <p className="f4">
+            <p className="f4 lh-copy">
               {title}
               <br />
               <a className="black" href={href}>
                 {href}
               </a>
             </p>
-            <p className="f4">{description}</p>
+            <p className="f4 lh-copy">{description}</p>
           </React.Fragment>
         )}
       />
@@ -88,15 +88,15 @@ const Resume = () => (
         items={experienceItems}
         renderItem={({ title, date, headline, bullets }) => (
           <React.Fragment key={title}>
-            <p className="f4">
+            <p className="f4 lh-copy">
               {title}
               <br />
               {date}
             </p>
-            <p className="f4">{headline}</p>
+            <p className="f4 lh-copy">{headline}</p>
             <ul>
               {bullets.map((t) => (
-                <li className="f4" key={t}>
+                <li className="f4 lh-copy" key={t}>
                   {t}
                 </li>
               ))}
