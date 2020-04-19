@@ -3,6 +3,8 @@ import * as React from "react";
 import Sidebar from "../components/sidebar";
 import Content from "../components/content";
 
+import Head from "next/head";
+
 const projectItems = [
   {
     title: "trashed",
@@ -63,50 +65,56 @@ const Section = ({ className = "", title, items, renderItem }) => (
 );
 
 const Resume = () => (
-  <div className="bg-white sans-serif vh-100 vw-100 flex">
-    <Sidebar />
-    <Content>
-      <Section
-        title={"Projects"}
-        items={projectItems}
-        className="mb5"
-        renderItem={({ title, href, description }) => (
-          <React.Fragment key={href}>
-            <p className="f4 lh-copy">
-              {title}
-              <br />
-              <a className="black" href={href}>
-                {href}
-              </a>
-            </p>
-            <p className="f4 lh-copy">{description}</p>
-          </React.Fragment>
-        )}
-      />
-      <Section
-        title={"Experience"}
-        items={experienceItems}
-        renderItem={({ title, date, headline, bullets }) => (
-          <React.Fragment key={title}>
-            <p className="f4 lh-copy">
-              {title}
-              <br />
-              {date}
-            </p>
-            <p className="f4 lh-copy">{headline}</p>
-            <ul>
-              {bullets.map((t) => (
-                <li className="f4 lh-copy" key={t}>
-                  {t}
-                </li>
-              ))}
-            </ul>
-          </React.Fragment>
-        )}
-      />
-    </Content>
-    <div />
-  </div>
+  <>
+    <Head>
+      <title>Work ■ javamonn</title>
+      <meta key="description" name="description" content="Work and projects." />
+    </Head>
+    <div className="bg-white sans-serif vh-100 vw-100 flex">
+      <Sidebar />
+      <Content>
+        <Section
+          title={"Projects"}
+          items={projectItems}
+          className="mb5"
+          renderItem={({ title, href, description }) => (
+            <React.Fragment key={href}>
+              <p className="f4 lh-copy">
+                {title}
+                <br />
+                <a className="black" href={href}>
+                  {href}
+                </a>
+              </p>
+              <p className="f4 lh-copy">{description}</p>
+            </React.Fragment>
+          )}
+        />
+        <Section
+          title={"Experience"}
+          items={experienceItems}
+          renderItem={({ title, date, headline, bullets }) => (
+            <React.Fragment key={title}>
+              <p className="f4 lh-copy">
+                {title}
+                <br />
+                {date}
+              </p>
+              <p className="f4 lh-copy">{headline}</p>
+              <ul>
+                {bullets.map((t) => (
+                  <li className="f4 lh-copy" key={t}>
+                    {t}
+                  </li>
+                ))}
+              </ul>
+            </React.Fragment>
+          )}
+        />
+      </Content>
+      <div />
+    </div>
+  </>
 );
 
 export default Resume;

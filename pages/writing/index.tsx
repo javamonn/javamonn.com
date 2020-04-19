@@ -5,28 +5,36 @@ import path from "path";
 
 import Sidebar from "../../components/sidebar";
 import Content from "../../components/content";
+
 import Link from "next/link";
+import Head from "next/head";
 
 const Blog = ({ posts }) => (
-  <div className="bg-white sans-serif vh-100 vw-100 flex">
-    <Sidebar />
-    <Content>
-      {posts.map(({ title, href, description, date }) => (
-        <React.Fragment key={href}>
-          <Link href={href}>
-            <a className="black no-underline">
-              <div className="flex flex-column flex-row-l justify-between-l items-center-l">
-                <h3 className="i f4 mb1 mb0-l ma0">{title}</h3>
-                <time className="f5">{date}</time>
-              </div>
-              <p className="f4">{description}</p>
-            </a>
-          </Link>
-          <hr className="b--black" />
-        </React.Fragment>
-      ))}
-    </Content>
-  </div>
+  <>
+    <Head>
+      <title>Writing ■ javamonn</title>
+      <meta key="description" name="description" content="Words and thoughts." />
+    </Head>
+    <div className="bg-white sans-serif vh-100 vw-100 flex">
+      <Sidebar />
+      <Content>
+        {posts.map(({ title, href, description, date }) => (
+          <React.Fragment key={href}>
+            <Link href={href}>
+              <a className="black no-underline">
+                <div className="flex flex-column flex-row-l justify-between-l items-center-l">
+                  <h3 className="i f4 mb1 mb0-l ma0">{title}</h3>
+                  <time className="f5">{date}</time>
+                </div>
+                <p className="f4">{description}</p>
+              </a>
+            </Link>
+            <hr className="b--black" />
+          </React.Fragment>
+        ))}
+      </Content>
+    </div>
+  </>
 );
 
 export const getStaticProps = (context) => {
