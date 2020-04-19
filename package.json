@@ -1,11 +1,11 @@
 {
-  "name": "daniel.forsale",
+  "name": "javamonn.com",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
+    "start": "next dev",
+    "build": "export NODE_ENV=production && next build && next export",
+    "next:build": "next build"
   },
   "dependencies": {
     "classnames": "^2.2.6",
