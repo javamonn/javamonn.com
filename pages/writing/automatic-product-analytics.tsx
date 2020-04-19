@@ -20,8 +20,8 @@ const AutomaticAnalytics = () => (
   <div className="bg-white sans-serif vh-100 vw-100 flex">
     <Sidebar />
     <Content>
-      <header className="flex flex-row justify-between items-center">
-        <h3 className="i f3 ma0">{title}</h3>
+      <header className="flex flex-column flex-row-l justify-between-l items-center-l">
+        <h3 className="i f3 mb2 mb0-l ma0">{title}</h3>
         <time className="f5">{date}</time>
       </header>
       <hr className="b--black" />
@@ -106,7 +106,7 @@ const AutomaticAnalytics = () => (
           </A>{" "}
           is a simple Apollo middleware component that looks like the following:
         </P>
-        <pre>{code1}</pre>
+        <pre className="overflow-x-auto">{code1}</pre>
         <P>
           This is combined with logic in the consumer to optionally transform
           the GraphQL operations before delivering them to your product

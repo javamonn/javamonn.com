@@ -1,7 +1,7 @@
 import * as React from "react";
 
 export const A = (props) => <a className="black" {...props} />;
-export const P = (props) => <p className="" {...props} />;
+export const P = (props) => <p {...props} />;
 
 const Content = ({ children, className = "" }) => (
   <main
@@ -10,7 +10,7 @@ const Content = ({ children, className = "" }) => (
       className
     }
   >
-    <div className="mw7">{children}</div>
+    <div className="ph4 ph0-l mw7-l w-100">{children}</div>
   </main>
 );
 

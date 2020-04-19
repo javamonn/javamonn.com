@@ -15,8 +15,8 @@ const Blog = ({ posts }) => (
         <React.Fragment key={href}>
           <Link href={href}>
             <a className="black no-underline">
-              <div className="flex flex-row justify-between items-center">
-                <h3 className="i f4 ma0">{title}</h3>
+              <div className="flex flex-column flex-row-l justify-between-l items-center-l">
+                <h3 className="i f4 mb1 mb0-l ma0">{title}</h3>
                 <time className="f5">{date}</time>
               </div>
               <p className="f4">{description}</p>
