@@ -1,6 +1,7 @@
 import * as React from "react";
 import Sidebar from "../../components/sidebar";
 import Content, { A, P, SectionHeader, Ref } from "../../components/content";
+import Code from "../../components/code"
 
 import Head from "next/head";
 
@@ -9,7 +10,7 @@ export const description =
   "Analytics within early stage products, like the product itself, are necessarily iterative. What if you could scaffold event reporting from the core business logic?";
 export const date = "April 14 2020";
 
-const code1 = `ApolloLink.make((operation, forward) => {
+const code1 = `let link = ApolloLink.make((operation, forward) => {
   forward(operation)
   ->ApolloLink.Observable.map(data => {
       onOperation(operation, data);
@@ -87,9 +88,9 @@ const AutomaticAnalytics = () => (
             declarative. User actions are modeled as independent operations that
             closely match how a user is interacting with your application. For
             example, when a user views their homescreen, the application will
-            trigger something like a <code>Query HomeScreen_v1</code>. When the
+            trigger something like a <code className="bg-black white pa1">Query HomeScreen_v1</code>. When the
             user takes an action that updates some state, the application will
-            trigger something like a <code>Mutation CreateNote_v1</code>.
+            trigger something like a <code className="bg-black white pa1">Mutation CreateNote_v1</code>.
             Capturing, transforming, and reporting these operations as analytics
             events appoximates a comprehensive tracking plan with little effort.
             By extending your applications core network layer logic, analytics
@@ -110,7 +111,7 @@ const AutomaticAnalytics = () => (
             is a simple Apollo middleware component that looks like the
             following:
           </P>
-          <pre className="overflow-x-auto">{code1}</pre>
+          <Code>{code1}</Code>
           <P>
             This is combined with logic in the consumer to optionally transform
             the GraphQL operations before delivering them to your product
@@ -121,7 +122,7 @@ const AutomaticAnalytics = () => (
             integrated it into, and I intend to add more functionality to it
             over the coming months. In particular, I'd like to add support for a
             client-side only resolver
-            <Ref id="3" /> for a <code>Mutation CreateEvent</code> operation,
+            <Ref id="3" /> for a <code className="bg-black white pa1">Mutation CreateEvent</code> operation,
             with the goal being to enable manual instrumentation through a
             unified interface for events that you want to track that are not
             otherwise coupled to GraphQL operations.
