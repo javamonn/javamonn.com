@@ -29,7 +29,7 @@ const Blog = ({ posts }) => (
                 <p className="f4">{description}</p>
               </a>
             </Link>
-            <hr className="b--black" />
+            <hr className="b--black mb5" />
           </React.Fragment>
         ))}
       </Content>
@@ -46,7 +46,10 @@ export const getStaticProps = (context) => {
       const { title, date, description } = require(`./${name}`);
       const href = `writing/${path.basename(name, ".tsx")}`;
       return { title, href, description, date };
-    });
+    })
+    .sort((a, b) => {
+      return Date.parse(b.date) - Date.parse(a.date)
+    })
   return { props: { posts } };
 };
 
