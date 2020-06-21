@@ -2,18 +2,20 @@ import * as React from "react";
 
 export const A = (props) => <a className="black" {...props} />;
 export const P = (props) => <p {...props} />;
-export const SectionHeader = ({ title }) =>
+export const SectionHeader = ({ title }) => (
   <>
     <h3 className="i f4 ma0 mt5">{title}</h3>
     <hr className="b--black" />
   </>
+);
 
-export const Ref = ({ id }) =>
+export const Ref = ({ id }) => (
   <sup>
     <a className="black" href={`#note-${id}`}>
       [{id}]
     </a>
   </sup>
+);
 
 const Content = ({ children, className = "" }) => (
   <main
@@ -24,6 +26,10 @@ const Content = ({ children, className = "" }) => (
   >
     <div className="ph4 ph0-l mw7-l w-100">{children}</div>
   </main>
+);
+
+export const Blockquote = ({ children }) => (
+  <blockquote className="system-serif i bl b--black pl3">{children}</blockquote>
 );
 
 export default Content;
