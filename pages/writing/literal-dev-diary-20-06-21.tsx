@@ -227,6 +227,30 @@ const DevDiary = () => (
             as I start implementing it within Literal.
           </P>
 
+          <SectionHeader title="Highlights of the week" />
+          <div className="flex flex-row flex-wrap items-center justify-center">
+            <img
+              className="mw6 flex-none mh3 mv3"
+              src="/literal-dev-diary-20-06-21/screenshot-1.png"
+            />
+            <img
+              className="mw6 flex-none mh3 mv3"
+              src="/literal-dev-diary-20-06-21/screenshot-2.png"
+            />
+            <img
+              className="mw6 flex-none mh3 mv3"
+              src="/literal-dev-diary-20-06-21/screenshot-3.png"
+            />
+            <img
+              className="mw6 flex-none mh3 mv3"
+              src="/literal-dev-diary-20-06-21/screenshot-4.png"
+            />
+            <img
+              className="mw6 flex-none mh3 mv3"
+              src="/literal-dev-diary-20-06-21/screenshot-5.png"
+            />
+          </div>
+
           <aside>
             <SectionHeader title="Notes" />
             <ol>
