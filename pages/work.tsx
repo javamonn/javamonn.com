@@ -22,8 +22,14 @@ const projectItems = [
 
 const experienceItems = [
   {
+    title: "Software Engineer, Freelance",
+    date: "August 2020 - Present",
+    headline:
+      "Full-stack product engineer, specializing in product definition, architecture, and end-to-end implementation of minimum viable products and early-stage products. Additionally, I've also often worked in maintenance of legacy systems, rapidly scaling prototypes, and ongoing development of established products.\n\n I prefer working full-stack, but can slot into a specific part of the stack if desired. My preferred set of technologies include React, React Native, TypeScript, Apollo / Relay, GraphQL, PostgreSQL, and AWS, but the exact set of tools I reach for depends on the specifics of the product and business requirements.",
+  },
+  {
     title: "Technical Lead, BigSpring",
-    date: "Jan 2019 - Present",
+    date: "January 2019 - August 2020",
     headline:
       "In leading software engineering at BigSpring, I am responsible for the ideation and implementation of technology in service of business initiatives as well as overseeing management and growth of the engineering department.",
     bullets: [
@@ -45,7 +51,7 @@ const experienceItems = [
   },
   {
     title: "Chief Information Officer, MyFyx",
-    date: "Jan 2015 - July 2016",
+    date: "January 2015 - July 2016",
     headline:
       "In leading engineering, I was responsible for end to end product architecture and implementation for an early stage social music startup.",
     bullets: [
@@ -80,7 +86,7 @@ const Resume = () => (
           renderItem={({ title, href, description }) => (
             <React.Fragment key={href}>
               <p className="f4 lh-copy">
-                {title}
+                <b>{title}</b>
                 <br />
                 <a className="black" href={href}>
                   {href}
@@ -96,18 +102,22 @@ const Resume = () => (
           renderItem={({ title, date, headline, bullets }) => (
             <React.Fragment key={title}>
               <p className="f4 lh-copy">
-                {title}
+                <b>{title}</b>
                 <br />
                 {date}
               </p>
-              <p className="f4 lh-copy">{headline}</p>
-              <ul>
-                {bullets.map((t) => (
-                  <li className="f4 lh-copy" key={t}>
-                    {t}
-                  </li>
-                ))}
-              </ul>
+              <p className="f4 lh-copy" style={{ whiteSpace: "pre-line" }}>
+                {headline}
+              </p>
+              {bullets && (
+                <ul>
+                  {bullets.map((t) => (
+                    <li className="f4 lh-copy" key={t}>
+                      {t}
+                    </li>
+                  ))}
+                </ul>
+              )}
             </React.Fragment>
           )}
         />
