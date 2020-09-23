@@ -68,7 +68,7 @@ const Sidebar = () => {
           Work
         </Link>
         <Link href="https://github.com/javamonn">Github</Link>
-        <Link href="mailto:javamonn@gmail.com">Contact</Link>
+        <Link href="mailto:javamonn@hey.com">Contact</Link>
       </nav>
     </>
   );
