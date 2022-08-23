@@ -7,6 +7,12 @@ import Head from "next/head";
 
 const projectItems = [
   {
+    title: "Literal",
+    href: "https://literal.io",
+    description: "Literal augments your online reading experience; capture annotations, sources, and knowledge. Distributed as an Android application and implements the W3C Web Annotation standard. Utilizes Rescript, React, Tailwind CSS, GraphQL, and AWS Amplify."
+
+  },
+  {
     title: "trashed",
     href: "https://trashed.today",
     description:
@@ -22,10 +28,21 @@ const projectItems = [
 
 const experienceItems = [
   {
+    title: "Founder, Sunspot",
+    date: "October 2021 - Present",
+    headline: "Founded and led development. Sunspot alerts users in real-time when events occur in Ethereum Non-Fungible Token (NFT) marketplaces: snipe rare listings, build project sales bots, monitor floor prices and more. Utilized React, Rescript, Ethers, Node.js, Apollo, GraphQL, Apollo, and AWS (Lamdba, API Gateway, Kinesis, DynamoDB, EKS, Cloudwatch).",
+    bullets: [
+      "Architected real-time event ingest and processing pipeline dispatching Push, Discord, and Twitter notifications to users with sub-second latency.",
+      "Developed fully automated NFT metadata indexing system utilizing self-hosted IPFS nodes to calculate rarity ranks of newly revealed collections in under 2 minutes on average.",
+      "Deployed a Smart Contract to take a referrer fee on application-sourced orders.",
+      "Achieved 10k registered users, hundreds of daily active users, and over $30k in revenue."
+    ]
+  },
+  {
     title: "Software Engineer, Freelance",
-    date: "August 2020 - Present",
+    date: "August 2020 - January 2022",
     headline:
-      "Full-stack product engineer, specializing in product definition, architecture, and end-to-end implementation of minimum viable products and early-stage products. Additionally, I've also often worked in maintenance of legacy systems, rapidly scaling prototypes, and ongoing development of established products.\n\n I prefer working full-stack, but can slot into a specific part of the stack if desired. My preferred set of technologies include React, React Native, TypeScript, Apollo / Relay, GraphQL, PostgreSQL, and AWS, but the exact set of tools I reach for depends on the specifics of the product and business requirements.",
+      "Full-stack product engineer, specializing in product definition, architecture, and end-to-end implementation of minimum viable products and early-stage products. Additionally, I've also often worked in maintenance of legacy systems, rapidly scaling prototypes, and ongoing development of established products. Client projects included smart contract development and audits, Web3 frontends and integrations,web and mobile apps, and more. \n\n I prefer working full-stack, but can slot into a specific part of the stack if desired. My preferred set of technologies include React, React Native, TypeScript, Apollo / Relay, GraphQL, PostgreSQL, and AWS, but the exact set of tools I reach for depends on the specifics of the product and business requirements."
   },
   {
     title: "Technical Lead, BigSpring",
@@ -80,23 +97,6 @@ const Resume = () => (
       <Sidebar />
       <Content>
         <Section
-          title={"Projects"}
-          items={projectItems}
-          className="mb5"
-          renderItem={({ title, href, description }) => (
-            <React.Fragment key={href}>
-              <p className="f4 lh-copy">
-                <b>{title}</b>
-                <br />
-                <a className="black" href={href}>
-                  {href}
-                </a>
-              </p>
-              <p className="f4 lh-copy">{description}</p>
-            </React.Fragment>
-          )}
-        />
-        <Section
           title={"Experience"}
           items={experienceItems}
           renderItem={({ title, date, headline, bullets }) => (
@@ -118,6 +118,23 @@ const Resume = () => (
                   ))}
                 </ul>
               )}
+            </React.Fragment>
+          )}
+        />
+        <Section
+          title={"Projects"}
+          items={projectItems}
+          className="mt5"
+          renderItem={({ title, href, description }) => (
+            <React.Fragment key={href}>
+              <p className="f4 lh-copy">
+                <b>{title}</b>
+                <br />
+                <a className="black" href={href}>
+                  {href}
+                </a>
+              </p>
+              <p className="f4 lh-copy">{description}</p>
             </React.Fragment>
           )}
         />
