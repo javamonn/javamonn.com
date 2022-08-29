@@ -30,7 +30,7 @@ const experienceItems = [
   {
     title: "Founder, Sunspot",
     date: "October 2021 - Present",
-    headline: "Founded and led development. Sunspot alerts users in real-time when events occur in Ethereum Non-Fungible Token (NFT) marketplaces: snipe rare listings, build project sales bots, monitor floor prices and more. Utilized React, Rescript, Ethers, Node.js, Apollo, GraphQL, Apollo, and AWS (Lamdba, API Gateway, Kinesis, DynamoDB, EKS, Cloudwatch).",
+    headline: "Founded and led development. Sunspot alerts users in real-time when events occur in Ethereum Non-Fungible Token (NFT) marketplaces: snipe rare listings, build project sales bots, monitor floor prices and more. Utilized React, Rescript, Ethers, Node.js, Apollo, GraphQL, Apollo, and AWS (Lambda, API Gateway, Kinesis, DynamoDB, EKS, Cloudwatch).",
     bullets: [
       "Architected real-time event ingest and processing pipeline dispatching Push, Discord, and Twitter notifications to users with sub-second latency.",
       "Developed fully automated NFT metadata indexing system utilizing self-hosted IPFS nodes to calculate rarity ranks of newly revealed collections in under 2 minutes on average.",
@@ -42,7 +42,7 @@ const experienceItems = [
     title: "Software Engineer, Freelance",
     date: "August 2020 - January 2022",
     headline:
-      "Full-stack product engineer, specializing in product definition, architecture, and end-to-end implementation of minimum viable products and early-stage products. Additionally, I've also often worked in maintenance of legacy systems, rapidly scaling prototypes, and ongoing development of established products. Client projects included smart contract development and audits, Web3 frontends and integrations,web and mobile apps, and more. \n\n I prefer working full-stack, but can slot into a specific part of the stack if desired. My preferred set of technologies include React, React Native, TypeScript, Apollo / Relay, GraphQL, PostgreSQL, and AWS, but the exact set of tools I reach for depends on the specifics of the product and business requirements."
+      "Full-stack product engineer, specializing in product definition, architecture, and end-to-end implementation of minimum viable products and early-stage products. Additionally, I've also often worked in maintenance of legacy systems, rapidly scaling prototypes, and ongoing development of established products. Client projects included smart contract development and audits, Web3 frontends and integrations, web and mobile apps, and more. \n\n I prefer working full-stack, but can slot into a specific part of the stack if desired. My preferred set of technologies include React, React Native, TypeScript, Apollo / Relay, GraphQL, PostgreSQL, and AWS, but the exact set of tools I reach for depends on the specifics of the product and business requirements."
   },
   {
     title: "Technical Lead, BigSpring",
