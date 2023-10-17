@@ -8,13 +8,13 @@ import Head from "next/head";
 const projectItems = [
   {
     title: "Literal",
-    href: "https://literal.io",
+    href: "https://github.com/literal-io/literal",
     description: "Literal augments your online reading experience; capture annotations, sources, and knowledge. Distributed as an Android application and implements the W3C Web Annotation standard. Utilizes Rescript, React, Tailwind CSS, GraphQL, and AWS Amplify."
 
   },
   {
     title: "trashed",
-    href: "https://trashed.today",
+    href: "https://github.com/javamonn/trashed",
     description:
       "trashed is a free, decentralized, and efficient peer-to-peer recycling system - like the “free stuff” section on craigslist, but for things that have already been thrown out. Distributed as a Progressive Web Application, utilizes ReasonML, React, Tailwind CSS, GraphQL, and AWS Amplify.",
   },
@@ -28,8 +28,14 @@ const projectItems = [
 
 const experienceItems = [
   {
+    title: "Software Engineer, Freelance",
+    date: "August 2020 - January 2022, October 2022 - Present",
+    headline:
+      "Full-stack product engineer, specializing in product definition, architecture, and end-to-end implementation of early-stage products. Additionally, I've also often worked in maintenance of legacy systems, rapidly scaling prototypes, and ongoing development of established products. Client projects included smart contract development and audits, Web3 frontends and integrations, web and mobile apps, and more. \n\n I prefer working full-stack, but can slot into a specific part of the stack if desired. My preferred set of technologies include React, React Native, TypeScript, Apollo / Relay, GraphQL, PostgreSQL, and AWS, but the exact set of tools I reach for depends on the specifics of the product and business requirements."
+  },
+  {
     title: "Founder, Sunspot",
-    date: "October 2021 - Present",
+    date: "October 2021 - October 2022",
     headline: "Founded and led development. Sunspot alerts users in real-time when events occur in Ethereum Non-Fungible Token (NFT) marketplaces: snipe rare listings, build project sales bots, monitor floor prices and more. Utilized React, Rescript, Ethers, Node.js, Apollo, GraphQL, Apollo, and AWS (Lambda, API Gateway, Kinesis, DynamoDB, EKS, Cloudwatch).",
     bullets: [
       "Architected real-time event ingest and processing pipeline dispatching Push, Discord, and Twitter notifications to users with sub-second latency.",
@@ -37,12 +43,6 @@ const experienceItems = [
       "Deployed a Smart Contract to take a referrer fee on application-sourced orders.",
       "Achieved 10k registered users, hundreds of daily active users, and over $30k in revenue."
     ]
-  },
-  {
-    title: "Software Engineer, Freelance",
-    date: "August 2020 - January 2022",
-    headline:
-      "Full-stack product engineer, specializing in product definition, architecture, and end-to-end implementation of minimum viable products and early-stage products. Additionally, I've also often worked in maintenance of legacy systems, rapidly scaling prototypes, and ongoing development of established products. Client projects included smart contract development and audits, Web3 frontends and integrations, web and mobile apps, and more. \n\n I prefer working full-stack, but can slot into a specific part of the stack if desired. My preferred set of technologies include React, React Native, TypeScript, Apollo / Relay, GraphQL, PostgreSQL, and AWS, but the exact set of tools I reach for depends on the specifics of the product and business requirements."
   },
   {
     title: "Technical Lead, BigSpring",
@@ -89,8 +89,7 @@ const Section = ({ className = "", title, items, renderItem }) => (
 
 const Resume = () => (
   <>
-    <Head>
-      <title>Work ■ javamonn</title>
+    <Head> <title>Work ■ javamonn</title>
       <meta key="description" name="description" content="Work and projects." />
     </Head>
     <div className="bg-white sans-serif vh-100 vw-100 flex">
